@@ -46,7 +46,7 @@ button:hover
 
 #cardContainer .card
 {
-    padding: 20px 6px ;
+    padding: 20px 6px 30px;
     /* Glassmorphism */
     background-color: rgba(255, 255, 255, 0.323);
     border-radius: 10px;

@@ -1,9 +1,10 @@
-const txtTitle = document.querySelector('#title');
-const txtAuthor = document.querySelector('#author');
 const btnAdd = document.querySelector('#btnAdd');
 const container = document.querySelector('#cardContainer');
 const buttonModal = document.querySelector('#buttonModal');
 const modal = document.querySelector('dialog');
+const txtTitle = document.querySelector('#title');
+const txtAuthor = document.querySelector('#author');
+const txtPages = document.querySelector('#pages');
 
 const myLibrary = [];
 
@@ -25,19 +26,24 @@ buttonModal.addEventListener('click', function() {
 
 function addBookToLibrary() 
 {
-    title = txtTitle.value;
-    author = txtAuthor.value;
+    let title = txtTitle.value;
+    let author = txtAuthor.value;
+    let pages = txtPages.value;
+    let status = document.querySelector('input[type="radio"]:checked').value;
 
-    let newBook = new Book(title, author);
+    let newBook = new Book(title, author, pages, status);
     myLibrary.push(newBook);
     console.log(myLibrary);
+    container.innerHTML = '';
+    showBooks();
 }
 
-// btnAdd.addEventListener('click', function(e) 
-// {
-//     addBookToLibrary();
-//     e.preventDefault();
-// });
+btnAdd.addEventListener('click', function(e) 
+{
+    addBookToLibrary();
+    e.preventDefault();
+    modal.close();
+});
 
 function showBooks()
 {
