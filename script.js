@@ -2,6 +2,8 @@ const txtTitle = document.querySelector('#title');
 const txtAuthor = document.querySelector('#author');
 const btnAdd = document.querySelector('#btnAdd');
 const container = document.querySelector('#cardContainer');
+const buttonModal = document.querySelector('#buttonModal');
+const modal = document.querySelector('dialog');
 
 const myLibrary = [];
 
@@ -17,6 +19,10 @@ function Book(title, author, pages, status)
     this.status = status;
 }
 
+buttonModal.addEventListener('click', function() {
+    modal.showModal();
+});
+
 function addBookToLibrary() 
 {
     title = txtTitle.value;
@@ -26,6 +32,12 @@ function addBookToLibrary()
     myLibrary.push(newBook);
     console.log(myLibrary);
 }
+
+// btnAdd.addEventListener('click', function(e) 
+// {
+//     addBookToLibrary();
+//     e.preventDefault();
+// });
 
 function showBooks()
 {

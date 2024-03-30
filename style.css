@@ -8,6 +8,7 @@ body
     background-image: linear-gradient(to right top, #f299b1, #f18db1, #ef80b2, #eb74b6, #e569bb, #e26dc3, #de71cb, #da75d2, #db87dc, #dc97e4, #dda7ec, #e0b6f2);
     background-repeat: no-repeat;   
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh; 
     color: white;
     text-align: center;
@@ -47,7 +48,7 @@ button:hover
 {
     padding: 20px 6px ;
     /* Glassmorphism */
-    background-color: rgba(255, 255, 255, 0.245);
+    background-color: rgba(255, 255, 255, 0.323);
     border-radius: 10px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -83,4 +84,65 @@ button:hover
 {
     font-weight: 600;
     color: rgb(130, 116, 116);
+}
+
+dialog
+{
+    border-radius: 15px;
+    width: 400px;
+    color: white;
+    /* Glassmorphism */
+    background-color: rgba(255, 255, 255, 0.377);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+}
+
+dialog h2
+{
+    font-size: 26px;
+}
+
+
+dialog::backdrop
+{
+    background-color: rgba(0, 0, 0, 0.162);
+}
+
+form
+{
+    text-align: start;
+    padding: 0 10px;
+}
+
+form input[type="text"], form input[type="number"]
+{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+    width: 90%;
+    font-size: 18px;
+    outline: none;
+}
+
+form input[type="text"]:focus, form input[type="number"]:focus
+{
+    border-bottom: 2px solid white;
+    margin-top: 10px;
+}
+
+form label, form div p
+{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+form div label 
+{
+    font-size: 16px;
+}
+
+dialog button
+{
+    margin-top: 20px;
 }
