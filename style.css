@@ -1,6 +1,15 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Icons */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 body
 {
     margin: 0;
@@ -67,6 +76,29 @@ button:hover
     font-weight: 300;
 }
 
+#cardContainer .card .btnDelete
+{
+    background-color: transparent;
+    color: white;
+    padding: 0;
+}
+
+#cardContainer .card .btnDelete:hover
+{
+    box-shadow: none;
+}
+
+#cardContainer .card .btnDelete .material-symbols-outlined
+{
+    font-size: 30px;
+}
+
+#cardContainer .card .btnDelete .material-symbols-outlined:hover
+{
+    font-variation-settings:
+    'wght' 400
+}
+
 #cardContainer .card .details 
 {
     display: flex;
@@ -98,15 +130,26 @@ dialog
     border: 1.5px solid rgba(209, 213, 219, 0.3);
 }
 
-dialog h2
-{
-    font-size: 26px;
-}
-
-
 dialog::backdrop
 {
     background-color: rgba(0, 0, 0, 0.162);
+}
+
+dialog #btnClose
+{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+dialog #btnClose.material-symbols-outlined {
+    font-size: 30px;
+  } 
+
+dialog h2
+{
+    font-size: 26px;
 }
 
 form
