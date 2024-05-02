@@ -72,9 +72,35 @@ function showBooks() {
 
         const indexPara = document.createElement('p');
         indexPara.setAttribute('class', 'index');
+        indexPara.setAttribute('style', 'color: transparent');
         indexPara.innerText = index;
 
         card.appendChild(indexPara);
+
+        const btnChangeStatus = document.createElement('button');
+        btnChangeStatus.setAttribute('class', 'btnChangeStatus');
+        btnChangeStatus.innerText = 'Change status';
+
+        card.appendChild(btnChangeStatus);
+
+        btnChangeStatus.addEventListener('click', function()
+        {
+            if (myLibrary[index].status === 'Read') 
+            {
+                myLibrary[index].status = 'Not Read';
+            } 
+            else 
+            {
+                myLibrary[index].status = 'Read';
+            }
+
+            container.innerHTML = '';
+            showBooks();
+        });
+
+        const br = document.createElement('br');
+        card.appendChild(br);
+
 
         const btnDelete = document.createElement('button');
         btnDelete.setAttribute('class', 'btnDelete');
